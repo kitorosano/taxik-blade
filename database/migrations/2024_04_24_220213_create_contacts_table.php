@@ -1,12 +1,10 @@
 <?php
 
-use App\Models\Company;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Model
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +13,10 @@ return new class extends Model
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->integer("phone");
-            $table->string("address");
-            $table->index("contact_code");
+            $table->string('name');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('contact_code')->unique();
             $table->timestamps();
         });
     }
