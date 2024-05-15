@@ -43,6 +43,6 @@ class RegisteredUserAdminController extends Controller
 
         Auth::login($admin);
 
-        return redirect(route('dashboard-admin', absolute: false));
+        return redirect(route('dashboard', absolute: false));
     }
 }
